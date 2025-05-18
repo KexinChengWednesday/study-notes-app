@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Study Notes</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h3>📚 Menu</h3>
+      <ul>
+        <li onclick="showAllNotes()">📒 All Notes</li>
+        <li onclick="showPriority()">⭐ Priority</li>
+        <li onclick="showHistory()">📜 History</li>
+        <li onclick="openSettings()">⚙️ Settings</li>
+      </ul>
+    </aside>
+
+    <!-- Main Area -->
+    <main class="main-content">
+      <header>
+        <h2>📒 Study Notes</h2>
+        <button onclick="logout()">Logout</button>
+      </header>
+
+      <div class="top-bar">
+        <input type="text" id="search" placeholder="Search notes..." />
+        <span>👤 <span id="userEmail">Loading...</span></span>
+      </div>
+
+      <form id="note-form" class="note-form">
+        <input type="text" id="title" placeholder="Note Title" required />
+        <textarea id="content" placeholder="Note Content…" rows="4" required></textarea>
+        <input type="text" id="tag" placeholder="Tag (optional)" />
+        <select id="priority">
+          <option value="">Priority</option>
+          <option value="high">High ⭐</option>
+          <option value="medium">Medium ⚠️</option>
+          <option value="low">Low 💤</option>
+        </select>
+        <button type="submit">Add Note</button>
+      </form>
+
+      <div id="notes-list"></div>
+      <div id="settings-panel" class="hidden">
+        <h3>Settings</h3>
+        <button onclick="toggleTheme()">Toggle Light/Dark Mode</button>
+        <button onclick="toggleLayout()">Toggle Layout</button>
+      </div>
+    </main>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="notes.js"></script>
+</body>
+</html>

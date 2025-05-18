@@ -1,0 +1,12 @@
+{
+    "name": "study-notes-app",
+    "version": "1.0.0",
+    "description": "Cloud-native study notes app",
+    "main": "backend/server.js",
+    "scripts": {
+      "start": "node backend/server.js"
+    },
+    "dependencies": {
+      "express": "^4.18.2"
+    }
+  }

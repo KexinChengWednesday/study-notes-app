@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: study-notes-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: study-notes
+  template:
+    metadata:
+      labels:
+        app: study-notes
+    spec:
+      containers:
+        - name: study-notes-app
+          image: australia-southeast1-docker.pkg.dev/studynotesapp/notes/study-notes-app
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080

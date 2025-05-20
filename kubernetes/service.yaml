@@ -3,11 +3,10 @@ kind: Service
 metadata:
   name: study-notes-service
 spec:
-  type: NodePort
   selector:
     app: study-notes
+  type: LoadBalancer
   ports:
     - protocol: TCP
       port: 80
       targetPort: 8080
-      nodePort: 31287  # 可更换或省略让系统分配

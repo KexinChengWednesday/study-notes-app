@@ -1,19 +1,17 @@
-# 原始基础镜像
+# 使用官方 Node.js 镜像作为基础镜像
 FROM node:18
 
-# 创建并进入工作目录
+# 设置工作目录
 WORKDIR /app
 
-# 复制依赖文件
-COPY backend/package.json .
-
-# 安装依赖
+# 复制依赖描述文件并安装依赖
+COPY package*.json ./
 RUN npm install
 
-# 复制静态资源和服务器文件
-COPY backend/server.js ./server.js
-COPY public ./public  
-# 暴露端口
+# 复制项目文件（包括 public、routes、models 等）
+COPY . .
+
+# 暴露应用端口
 EXPOSE 8080
 
 # 启动应用

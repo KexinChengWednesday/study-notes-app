@@ -1,10 +1,10 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyCfHVEvMREX4XkVtSh55LS7mzrzJOb-HIQ",
-  authDomain: "study-notes-webapp.firebaseapp.com",
+  apiKey: ,
+  authDomain:
   projectId: "study-notes-webapp",
   storageBucket: "study-notes-webapp.appspot.com",
-  messagingSenderId: "160484210778",
-  appId: "1:160484210778:web:6c10ca5adcfa7edf0f8063"
+  messagingSenderId: 
+  appId: 
 };
 
 // Initialize Firebase only once
